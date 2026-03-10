@@ -20,9 +20,20 @@
 
             <div class="card catalog-card border-0 shadow-sm h-100">
 
-                <div class="catalog-img">
-                    <img src="{{ catalog.image.url }}" class="card-img-top">
-                </div>
+             <div class="catalog-img">
+
+    <img src="{{ catalog.image.url }}" class="card-img-top">
+
+    <div class="catalog-overlay">
+
+        <a href="{{ catalog.get_catalog_url }}" target="_blank"
+           class="btn btn-light preview-overlay-btn">
+           <i class="fa fa-eye me-2"></i>Preview
+        </a>
+
+    </div>
+
+</div>
 
                 <div class="card-body text-center">
 
@@ -30,7 +41,7 @@
 
                     <div class="d-flex justify-content-center gap-2">
 
-                        <a href="{{ catalog.drive_link }}" target="_blank" 
+                        <a href="{{ catalog.get_catalog_url }}" target="_blank" 
                            class="btn btn-primary catalog-btn">
                            <i class="fa fa-eye me-2"></i>Preview
                         </a>
@@ -57,6 +68,18 @@
 
 <style>
 
+    .preview-overlay-btn{
+    font-weight:700;
+    padding:10px 22px;
+    border-radius:6px;
+    transform:translateY(10px);
+    transition:all .3s;
+}
+
+.catalog-card:hover .preview-overlay-btn{
+    transform:translateY(0);
+}
+
 .catalog-main-title{
     font-weight:800;
 }
@@ -77,6 +100,7 @@
     transition: all .35s ease;
     border-radius:12px;
     overflow:hidden;
+    cursor:pointer;
 }
 
 .catalog-card:hover{
@@ -84,9 +108,7 @@
     box-shadow:0 15px 40px rgba(0,0,0,0.15);
 }
 
-.catalog-img{
-    overflow:hidden;
-}
+
 
 .catalog-img img{
     height:260px;
@@ -97,6 +119,34 @@
 
 .catalog-card:hover img{
     transform:scale(1.08);
+}
+.catalog-img{
+    position:relative;
+    overflow:hidden;
+}
+
+.catalog-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,0.45);
+    opacity:0;
+    transition:all .35s ease;
+}
+
+.catalog-card:hover .catalog-overlay{
+    opacity:1;
+}
+
+.preview-overlay-btn{
+    font-weight:700;
+    padding:10px 22px;
+    border-radius:6px;
 }
 
 </style>

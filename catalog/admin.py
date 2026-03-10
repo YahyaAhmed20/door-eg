@@ -3,4 +3,5 @@ from .models import Catalog
 
 @admin.register(Catalog)
 class CatalogAdmin(admin.ModelAdmin):
-    list_display = ['title', 'created_at']
+    list_display = ['title', 'order', 'created_at']
+    ordering = ['order']
