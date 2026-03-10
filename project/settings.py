@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gxf@7$gtaqksc^2k^pd(hmwgnkbl3e12@h6n4ww0s+nuv0=!^('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "door-eg-production.up.railway.app",
@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'about',
     'services',
     'contact',
+    'catalog',
 ]
 
 MIDDLEWARE = [
