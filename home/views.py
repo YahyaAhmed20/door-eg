@@ -1,6 +1,9 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import Carousel
 
 def home(request):
-    return render(request, 'home/home.html')
+    carousel = Carousel.objects.first()
+
+    return render(request, 'home/home.html', {
+        'carousel': carousel
+    })

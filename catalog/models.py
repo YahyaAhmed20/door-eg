@@ -1,8 +1,12 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
+
 
 class Catalog(models.Model):
     title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='catalog_images/')
+    image = CloudinaryField(verbose_name="catalog_images/")
+
+    
     
     pdf = models.FileField(upload_to='catalog_pdfs/', blank=True, null=True)
     drive_link = models.URLField(blank=True, null=True)

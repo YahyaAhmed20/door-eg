@@ -2,80 +2,41 @@
 {% load static %}
 {% block body %}
 <!-- Carousel Start -->
-<div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
+<div class="container-fluid p-0 pb-5 wow fadeIn">
     <div class="owl-carousel header-carousel position-relative">
-        
-        <div class="owl-carousel-item position-relative" 
-             data-dot="<img src='{% static 'img/carousel-1.jpg' %}'>">
-             
-            <img class="img-fluid" src="{% static 'img/carousel-1.jpg' %}" alt="">
-            
+
+        {% for img in carousel.images.all %}
+
+        <div class="owl-carousel-item position-relative"
+             data-dot="<img src='{{ img.image.url }}'>">
+
+<img class="img-fluid w-100" src="{{ img.image.url }}" style="height:700px; object-fit:cover;" alt="">
             <div class="owl-carousel-inner">
                 <div class="container">
                     <div class="row justify-content-start">
                         <div class="col-10 col-lg-8">
+
                             <h1 class="display-1 text-white animated slideInDown">
-                                Best Architecture And Interior Design Services
+                                {{ carousel.title }}
                             </h1>
+
                             <p class="fs-5 fw-medium text-white mb-4 pb-3">
-                                Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no.
+                                {{ carousel.description }}
                             </p>
-                           <a href="{% url 'catalog:catalog' %}" class="btn btn-primary py-3 px-5 animated slideInLeft">
-    View Catalog
-</a>
+
+                            <a href="{% url 'catalog:catalog' %}"
+                               class="btn btn-primary py-3 px-5 animated slideInLeft">
+                                {{ carousel.button_text }}
+                            </a>
+
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-        <div class="owl-carousel-item position-relative" 
-             data-dot="<img src='{% static 'img/carousel-2.jpg' %}'>">
-             
-            <img class="img-fluid" src="{% static 'img/carousel-2.jpg' %}" alt="">
-            
-            <div class="owl-carousel-inner">
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-10 col-lg-8">
-                            <h1 class="display-1 text-white animated slideInDown">
-                                Best Architecture And Interior Design Services
-                            </h1>
-                            <p class="fs-5 fw-medium text-white mb-4 pb-3">
-                                Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no.
-                            </p>
-                                            <a href="{% url 'catalog:catalog' %}" class="btn btn-primary py-3 px-5 animated slideInLeft">
-    View Catalog
-</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="owl-carousel-item position-relative" 
-             data-dot="<img src='{% static 'img/carousel-3.jpg' %}'>">
-             
-            <img class="img-fluid" src="{% static 'img/carousel-3.jpg' %}" alt="">
-            
-            <div class="owl-carousel-inner">
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-10 col-lg-8">
-                            <h1 class="display-1 text-white animated slideInDown">
-                                Best Architecture And Interior Design Services
-                            </h1>
-                            <p class="fs-5 fw-medium text-white mb-4 pb-3">
-                                Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no.
-                            </p>
-                                              <a href="{% url 'catalog:catalog' %}" class="btn btn-primary py-3 px-5 animated slideInLeft">
-    View Catalog
-</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
 
     </div>
 </div>
@@ -91,10 +52,10 @@
                     <div class="fact-icon">
                         <img src="{% static 'img/icons/icon-2.png' %}" alt="Icon">
                     </div>
-                    <h3 class="mb-3">Design Approach</h3>
-                    <p class="mb-0">
-                        Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.
-                    </p>
+                    <h3 class="mb-3">Custom Metal Designs</h3>
+<p class="mb-0">
+We create unique laser cut metal designs for doors, gates and decorative panels.
+</p>
                 </div>
             </div>
 
@@ -103,10 +64,10 @@
                     <div class="fact-icon">
                         <img src="{% static 'img/icons/icon-3.png' %}" alt="Icon">
                     </div>
-                    <h3 class="mb-3">Innovative Solutions</h3>
-                    <p class="mb-0">
-                        Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.
-                    </p>
+                    <h3 class="mb-3">High Quality Materials</h3>
+<p class="mb-0">
+All products are manufactured using durable steel and modern fabrication techniques.
+</p>
                 </div>
             </div>
 
@@ -115,10 +76,10 @@
                     <div class="fact-icon">
                         <img src="{% static 'img/icons/icon-4.png' %}" alt="Icon">
                     </div>
-                    <h3 class="mb-3">Project Management</h3>
-                    <p class="mb-0">
-                        Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.
-                    </p>
+                   <h3 class="mb-3">Professional Installation</h3>
+<p class="mb-0">
+Our experienced team installs pergolas, doors and metal structures with precision.
+</p>
                 </div>
             </div>
 
@@ -132,8 +93,10 @@
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h4 class="section-title">Our Services</h4>
-            <h1 class="display-5 mb-4">We Focused On Modern Architecture And Interior Design</h1>
+           <h4 class="section-title">Our Services</h4>
+<h1 class="display-5 mb-4">
+Metal Fabrication & Laser Cut Design Services
+</h1>
         </div>
 
         <div class="row g-4">
@@ -144,8 +107,10 @@
                     <img class="bg-img" src="{% static 'img/service-1.jpg' %}" alt="">
                     <div class="service-text p-5">
                         <img class="mb-4" src="{% static 'img/icons/icon-5.png' %}" alt="Icon">
-                        <h3 class="mb-3">Architecture</h3>
-                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor.</p>
+                        <h3 class="mb-3">Metal Doors</h3>
+<p class="mb-4">
+Modern security doors with decorative laser cut panels.
+</p>
                         <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                     </div>
                 </div>
@@ -157,8 +122,10 @@
                     <img class="bg-img" src="{% static 'img/service-2.jpg' %}" alt="">
                     <div class="service-text p-5">
                         <img class="mb-4" src="{% static 'img/icons/icon-6.png' %}" alt="Icon">
-                        <h3 class="mb-3">3D Animation</h3>
-                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor.</p>
+                        <h3 class="mb-3">Pergola & Shades</h3>
+<p class="mb-4">
+Outdoor pergola structures and stylish shade systems.
+</p>
                         <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                     </div>
                 </div>
@@ -170,8 +137,10 @@
                     <img class="bg-img" src="{% static 'img/service-3.jpg' %}" alt="">
                     <div class="service-text p-5">
                         <img class="mb-4" src="{% static 'img/icons/icon-7.png' %}" alt="Icon">
-                        <h3 class="mb-3">House Planning</h3>
-                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor.</p>
+                       <h3 class="mb-3">Laser Cut Panels</h3>
+<p class="mb-4">
+Decorative metal designs using advanced laser cutting technology.
+</p>
                         <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                     </div>
                 </div>
@@ -183,8 +152,10 @@
                     <img class="bg-img" src="{% static 'img/service-4.jpg' %}" alt="">
                     <div class="service-text p-5">
                         <img class="mb-4" src="{% static 'img/icons/icon-8.png' %}" alt="Icon">
-                        <h3 class="mb-3">Interior Design</h3>
-                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor.</p>
+                        <h3 class="mb-3">Metal Gates</h3>
+<p class="mb-4">
+Luxury metal gates with modern and classic designs.
+</p>
                         <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                     </div>
                 </div>
@@ -196,8 +167,10 @@
                     <img class="bg-img" src="{% static 'img/service-5.jpg' %}" alt="">
                     <div class="service-text p-5">
                         <img class="mb-4" src="{% static 'img/icons/icon-9.png' %}" alt="Icon">
-                        <h3 class="mb-3">Renovation</h3>
-                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor.</p>
+                       <h3 class="mb-3">Metal Ladders</h3>
+<p class="mb-4">
+Durable ladders for residential and industrial use.
+</p>
                         <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                     </div>
                 </div>
@@ -209,8 +182,10 @@
                     <img class="bg-img" src="{% static 'img/service-6.jpg' %}" alt="">
                     <div class="service-text p-5">
                         <img class="mb-4" src="{% static 'img/icons/icon-10.png' %}" alt="Icon">
-                        <h3 class="mb-3">Construction</h3>
-                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor.</p>
+                       <h3 class="mb-3">Custom Metal Work</h3>
+<p class="mb-4">
+Custom fabrication for any metal design project.
+</p>
                         <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                     </div>
                 </div>
@@ -233,16 +208,16 @@
             <div class="col-lg-4">
                 <div class="nav nav-pills d-flex justify-content-between w-100 h-100 me-4">
                     <button class="nav-link w-100 p-4 mb-4 active" data-bs-toggle="pill" data-bs-target="#tab-pane-1">
-                        <h3 class="m-0">01. Modern Complex</h3>
+                        <h3 class="m-0">01. Modern Laser Door</h3>
                     </button>
                     <button class="nav-link w-100 p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-2">
-                        <h3 class="m-0">02. Royal Hotel</h3>
+                        <h3 class="m-0">02. Pergola Shade</h3>
                     </button>
                     <button class="nav-link w-100 p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-3">
-                        <h3 class="m-0">03. Mexwel Building</h3>
+                        <h3 class="m-0">03. Decorative Gate</h3>
                     </button>
                     <button class="nav-link w-100 p-4 mb-0" data-bs-toggle="pill" data-bs-target="#tab-pane-4">
-                        <h3 class="m-0">04. Shopping Complex</h3>
+                        <h3 class="m-0">04. Laser Cut Panel</h3>
                     </button>
                 </div>
             </div>
@@ -349,8 +324,10 @@
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h4 class="section-title">Testimonial</h4>
-            <h1 class="display-5 mb-4">Thousands Of Customers Who Trust Us And Our Services</h1>
+           <h4 class="section-title">Testimonials</h4>
+<h1 class="display-5 mb-4">
+What Our Clients Say
+</h1>
         </div>
 
         <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">

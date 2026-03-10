@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import cloudinary
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,7 +24,6 @@ SECRET_KEY = 'django-insecure-gxf@7$gtaqksc^2k^pd(hmwgnkbl3e12@h6n4ww0s+nuv0=!^(
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = [
     "door-eg-production.up.railway.app",
     "door-eg.com",
@@ -47,9 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    
-    # 'Apps'
+
+    'cloudinary',
+    'cloudinary_storage',
+
     'home',
     'about',
     'services',
@@ -92,10 +92,21 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'FILCEDearSbnmkZRhjlAWvTjRUghMSlO',
+        'HOST': 'switchyard.proxy.rlwy.net',
+        'PORT': '35647',
     }
 }
 
@@ -138,8 +149,15 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'project/static')
 ]
+cloudinary.config(
+    cloud_name="dxmzxtbdg",          # ده اللي بعد @
+    api_key="562512275641974",
+    api_secret="_qRjrAzI2zrhXwbMdrzqhKlNg-I",
+    secure=True
+)
 
 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
