@@ -40,8 +40,8 @@
 
     <!-- Topbar Start -->
     <div class="container-fluid bg-dark p-0 wow fadeIn" data-wow-delay="0.1s">
-<div class="row gx-0">
-              <div class="col-lg-7 px-5 text-start">
+        <div class="row gx-0 d-none d-lg-flex">
+          <div class="col-lg-7 px-5 text-start">
     <div class="top-contact d-inline-flex align-items-center py-3">
 
         <a class="contact-link me-4" href="tel:+201507696360">
@@ -67,6 +67,25 @@
     <!-- Topbar End -->
 
 
+    <style>
+ .top-contact{
+font-size:14px;
+font-weight:500;
+letter-spacing:0.3px;
+}
+.contact-link{
+color:#ffffff;
+text-decoration:none;
+transition:0.3s;
+}
+
+.contact-link:hover{
+color:#0d6efd;
+}
+.contact-link i{
+font-size:14px;
+}
+    </style>
 
    {% include 'parts/navbar.html' %}
 
