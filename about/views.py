@@ -1,6 +1,19 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import AboutHeader,AboutSection,FeatureSection,TeamSection
 
 def about(request):
-    return render(request, 'about/about.html')
+    header = AboutHeader.objects.first()
+    about = AboutSection.objects.first()
+
+    feature_section = FeatureSection.objects.first()
+    team_section = TeamSection.objects.first()
+
+
+    return render(request, 'about/about.html', {
+        'header': header,
+        'about': about,
+        'feature_section': feature_section,
+        'team_section': team_section
+
+
+    })
