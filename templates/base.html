@@ -44,10 +44,16 @@
           <div class="col-lg-7 px-5 text-start">
     <div class="top-contact d-inline-flex align-items-center py-3">
 
-        <a class="contact-link me-4" href="tel:+201507696360">
-            <i class="fa fa-phone-alt text-primary me-2"></i>
-            01507696360
-        </a>
+      <!-- ✅ Smart Phone Link - يفتح مودال الاختيار -->
+<a class="contact-link me-4" 
+   href="javascript:void(0);" 
+   onclick="openContactModal()" 
+   style="cursor: pointer; transition: 0.3s;"
+   onmouseover="this.style.opacity='0.8'" 
+   onmouseout="this.style.opacity='1'">
+    <i class="fa fa-phone-alt text-primary me-2"></i>
+    01507696360
+</a>
 
         <a class="contact-link" href="mailto:sara.galal@rovanatrade.com">
             <i class="fa fa-envelope text-primary me-2"></i>
@@ -114,6 +120,52 @@ font-size:14px;
     <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
 
     <script src="{% static 'js/main.js' %}"></script>
+
+
+
+    <!-- ✅ Global Contact Choice Modal (Shared Across All Pages) -->
+<div class="modal fade" id="globalContactModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header border-0 pb-2">
+        <h5 class="modal-title fw-bold">Contact door-eg</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center p-4">
+        <p class="text-muted mb-4">Choose your preferred way to reach us</p>
+        
+        <!-- Phone Call Button -->
+        <a href="tel:+201507696360" class="btn btn-primary w-100 py-3 mb-3 rounded-pill shadow-sm d-flex align-items-center justify-content-center gap-2">
+            <i class="fa fa-phone-alt"></i> 
+            <span>Phone Call</span>
+        </a>
+        
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/201507696360?text=Hello%20Icondoor,%20I%20would%20like%20to%20inquire%20about%20your%20products." 
+           target="_blank" 
+           class="btn btn-success w-100 py-3 rounded-pill shadow-sm d-flex align-items-center justify-content-center gap-2">
+            <i class="fa fa-whatsapp"></i> 
+            <span>Chat on WhatsApp</span>
+        </a>
+        
+        <p class="small text-muted mt-3 mb-0">We're here to help with your steel doors & shading solutions</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ✅ JavaScript for Global Contact Modal -->
+<script>
+  function openContactModal() {
+    // التأكد إن Bootstrap موجود قبل تشغيل المودال
+    if (typeof bootstrap !== 'undefined') {
+      var modal = new bootstrap.Modal(document.getElementById('globalContactModal'));
+      modal.show();
+    } else {
+      // Fallback: لو Bootstrap مش محمل، افتح الاتصال مباشرة
+      window.location.href = 'tel:+201507696360';
+    }
+  }
+</script>
     </body>
 
     </html>
