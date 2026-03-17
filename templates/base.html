@@ -10,7 +10,8 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-<link href="{% static 'img/favicon.ico' %}" rel="icon">
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+    
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,12 +22,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
- <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
-<link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-<link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet">
 
-<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-<link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -42,28 +43,24 @@
     <div class="container-fluid bg-dark p-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="row gx-0 d-none d-lg-flex">
           <div class="col-lg-7 px-5 text-start">
-    <div class="top-contact d-inline-flex align-items-center py-3">
+            <div class="top-contact d-inline-flex align-items-center py-3">
 
-      <!-- ✅ Smart Phone Link - يفتح مودال الاختيار -->
-<a class="contact-link me-4" 
-   href="javascript:void(0);" 
-   onclick="openContactModal()" 
-   style="cursor: pointer; transition: 0.3s;"
-   onmouseover="this.style.opacity='0.8'" 
-   onmouseout="this.style.opacity='1'">
-    <i class="fa fa-phone-alt text-primary me-2"></i>
-    01507696360
-</a>
+              <!-- ✅ Smart Phone Link - يفتح مودال الاختيار -->
+              <a class="contact-link me-4" 
+                 href="javascript:void(0);" 
+                 onclick="openContactModal()" 
+                 style="cursor: pointer; transition: 0.3s;"
+                 onmouseover="this.style.opacity='0.8'" 
+                 onmouseout="this.style.opacity='1'">
+                <i class="fa fa-phone-alt text-primary me-2"></i>
+                01507696360
+              </a>
 
-        <a class="contact-link" href="mailto:sara.galal@rovanatrade.com">
-            <i class="fa fa-envelope text-primary me-2"></i>
-            sara.galal@rovanatrade.com
-        </a>
+              <!-- Email removed successfully -->
 
-    </div>
-</div>
+            </div>
+          </div>
             <div class="col-lg-5 px-5 text-end">
-                
                 <div class="h-100 d-inline-flex align-items-center">
                     <a class="btn btn-sm-square btn-outline-body me-1" href="https://www.facebook.com/laserDoor?rdid=HT2VSl9TBl6ysy22&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CSm3oqGky%2F#"><i class="fab fa-facebook-f"></i></a>
                 </div>
@@ -74,23 +71,22 @@
 
 
     <style>
- .top-contact{
-font-size:14px;
-font-weight:500;
-letter-spacing:0.3px;
-}
-.contact-link{
-color:#ffffff;
-text-decoration:none;
-transition:0.3s;
-}
-
-.contact-link:hover{
-color:#0d6efd;
-}
-.contact-link i{
-font-size:14px;
-}
+        .top-contact {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        .contact-link {
+            color: #ffffff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .contact-link:hover {
+            color: #0d6efd;
+        }
+        .contact-link i {
+            font-size: 14px;
+        }
     </style>
 
    {% include 'parts/navbar.html' %}
@@ -101,15 +97,13 @@ font-size:14px;
     <!-- Footer -->
     {% include 'parts/footer.html' %}
 
-  
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{% static 'lib/wow/wow.min.js' %}"></script>
     <script src="{% static 'lib/easing/easing.min.js' %}"></script>
     <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
@@ -124,48 +118,47 @@ font-size:14px;
 
 
     <!-- ✅ Global Contact Choice Modal (Shared Across All Pages) -->
-<div class="modal fade" id="globalContactModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-0 shadow-lg">
-      <div class="modal-header border-0 pb-2">
-        <h5 class="modal-title fw-bold">Contact door-eg</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center p-4">
-        <p class="text-muted mb-4">Choose your preferred way to reach us</p>
-        
-        <!-- Phone Call Button -->
-        <a href="tel:+201507696360" class="btn btn-primary w-100 py-3 mb-3 rounded-pill shadow-sm d-flex align-items-center justify-content-center gap-2">
-            <i class="fa fa-phone-alt"></i> 
-            <span>Phone Call</span>
-        </a>
-        
-        <!-- WhatsApp Button -->
-        <a href="https://wa.me/201507696360?text=Hello%20Icondoor,%20I%20would%20like%20to%20inquire%20about%20your%20products." 
-           target="_blank" 
-           class="btn btn-success w-100 py-3 rounded-pill shadow-sm d-flex align-items-center justify-content-center gap-2">
-            <i class="fa fa-whatsapp"></i> 
-            <span>Chat on WhatsApp</span>
-        </a>
-        
-        <p class="small text-muted mt-3 mb-0">We're here to help with your steel doors & shading solutions</p>
+    <div class="modal fade" id="globalContactModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+          <div class="modal-header border-0 pb-2">
+            <h5 class="modal-title fw-bold">Contact Door-eg</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center p-4">
+            <p class="text-muted mb-4">Choose your preferred way to reach us</p>
+            
+            <!-- Phone Call Button -->
+            <a href="tel:+201507696360" class="btn btn-primary w-100 py-3 mb-3 rounded-pill shadow-sm d-flex align-items-center justify-content-center gap-2">
+                <i class="fa fa-phone-alt"></i> 
+                <span>Phone Call</span>
+            </a>
+            
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/201507696360?text=Hello%20Icondoor,%20I%20would%20like%20to%20inquire%20about%20your%20products." 
+               target="_blank" 
+               class="btn btn-success w-100 py-3 rounded-pill shadow-sm d-flex align-items-center justify-content-center gap-2">
+                <i class="fa fa-whatsapp"></i> 
+                <span>Chat on WhatsApp</span>
+            </a>
+            
+            <p class="small text-muted mt-3 mb-0">We're here to help with your steel doors & shading solutions</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- ✅ JavaScript for Global Contact Modal -->
-<script>
-  function openContactModal() {
-    // التأكد إن Bootstrap موجود قبل تشغيل المودال
-    if (typeof bootstrap !== 'undefined') {
-      var modal = new bootstrap.Modal(document.getElementById('globalContactModal'));
-      modal.show();
-    } else {
-      // Fallback: لو Bootstrap مش محمل، افتح الاتصال مباشرة
-      window.location.href = 'tel:+201507696360';
-    }
-  }
-</script>
-    </body>
-
-    </html>
+    <!-- ✅ JavaScript for Global Contact Modal -->
+    <script>
+      function openContactModal() {
+        // التأكد إن Bootstrap موجود قبل تشغيل المودال
+        if (typeof bootstrap !== 'undefined') {
+          var modal = new bootstrap.Modal(document.getElementById('globalContactModal'));
+          modal.show();
+        } else {
+          // Fallback: لو Bootstrap مش محمل، افتح الاتصال مباشرة
+          window.location.href = 'tel:+201507696360';
+        }
+      }
+    </script>
+</body>
+</html>
