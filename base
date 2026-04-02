@@ -1,40 +1,21 @@
+
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    
-    <!-- ✅ 1. Dynamic Title & Meta Description for SEO -->
-    <title>
-        {% block title %}Icondoor | Steel Doors, Pergolas & Metal Ladders in Giza{% endblock %}
-    </title>
-    <meta name="description" content="{% block meta_description %}Icondoor specializes in high-quality steel doors, modern pergolas, and durable metal ladders in Bulaq Al-Dakrur, Giza. Professional installation and custom laser cut designs. Call 01507696360.{% endblock %}">
-    <meta name="keywords" content="{% block meta_keywords %}steel doors egypt, metal pergolas, laser cut doors, metal ladders, Icondoor, Bulaq Al-Dakrour, shading solutions{% endblock %}">
-    <meta name="author" content="Yahya Ahmed">
-    <meta name="robots" content="index, follow">
-
+    <title>Door</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="google-site-verification" content="8olo_7zsnpxrqVy6E8yYLeyo0y1eCxxaNDLtEKQsq9A" />
-
-    <!-- ✅ 2. Open Graph / Facebook & WhatsApp Preview -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ request.build_absolute_uri }}">
-    <meta property="og:title" content="{% block og_title %}Icondoor - High Quality Steel Solutions{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}Providing High Quality Steel Doors, Ladders and Shading Solutions in Giza. Experience precision engineering and durability.{% endblock %}">
-    <meta property="og:image" content="{% block og_image %}{% static 'img/og-image.jpg' %}{% endblock %}"> 
-    <!-- ملاحظة: تأكد من وجود صورة باسم og-image.jpg في مجلد img بحجم 1200x630 بكسل -->
-
-    <!-- ✅ 3. Performance Optimization (Preconnect) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
     <!-- Favicon -->
     <link href="{% static 'img/favicon.ico' %}" rel="icon">
     
     <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Teko:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
@@ -48,56 +29,13 @@
 
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
-
-    <!-- ✅ 4. Schema Markup (JSON-LD) for Local Business SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Icondoor",
-      "image": "{% static 'img/logo.png' %}", 
-      "@id": "{{ request.build_absolute_uri }}",
-      "url": "{{ request.build_absolute_uri }}",
-      "telephone": "+201507696360",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Tawfiq Hamza Al-Adawi, Barak Al-Khayam",
-        "addressLocality": "Bulaq Al-Dakrur",
-        "addressRegion": "Giza",
-        "postalCode": "12941",
-        "addressCountry": "EG"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 30.0131, 
-        "longitude": 31.1726
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "sameAs": [
-        "https://www.facebook.com/laserDoor"
-      ],
-      "priceRange": "$$"
-    }
-    </script>
 </head>
 
 <body>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border position-relative text-primary" style="width: 6rem; height: 6rem;" role="status"></div>
-        <img class="position-absolute top-50 start-50 translate-middle" src="{% static 'img/icons/icon-1.png' %}" alt="Icondoor Loading Icon">
+        <img class="position-absolute top-50 start-50 translate-middle" src="{% static 'img/icons/icon-1.png' %}" alt="Icon">
     </div>
     <!-- Spinner End -->
 
@@ -108,23 +46,24 @@
           <div class="col-lg-7 px-5 text-start">
             <div class="top-contact d-inline-flex align-items-center py-3">
 
-              <!-- ✅ Smart Phone Link -->
+              <!-- ✅ Smart Phone Link - يفتح مودال الاختيار -->
               <a class="contact-link me-4" 
                  href="javascript:void(0);" 
                  onclick="openContactModal()" 
                  style="cursor: pointer; transition: 0.3s;"
                  onmouseover="this.style.opacity='0.8'" 
-                 onmouseout="this.style.opacity='1'"
-                 aria-label="Call Icondoor">
+                 onmouseout="this.style.opacity='1'">
                 <i class="fa fa-phone-alt text-primary me-2"></i>
                 01507696360
               </a>
+
+              <!-- Email removed successfully -->
 
             </div>
           </div>
             <div class="col-lg-5 px-5 text-end">
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square btn-outline-body me-1" href="https://www.facebook.com/laserDoor?rdid=HT2VSl9TBl6ysy22&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CSm3oqGky%2F#" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook Page"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square btn-outline-body me-1" href="https://www.facebook.com/laserDoor?rdid=HT2VSl9TBl6ysy22&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CSm3oqGky%2F#"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
         </div>
@@ -160,7 +99,7 @@
     {% include 'parts/footer.html' %}
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top" aria-label="Back to Top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
@@ -177,12 +116,14 @@
 
     <script src="{% static 'js/main.js' %}"></script>
 
-    <!-- ✅ Global Contact Choice Modal -->
+
+
+    <!-- ✅ Global Contact Choice Modal (Shared Across All Pages) -->
     <div class="modal fade" id="globalContactModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-0 shadow-lg">
           <div class="modal-header border-0 pb-2">
-            <h5 class="modal-title fw-bold">Contact Icondoor</h5>
+            <h5 class="modal-title fw-bold">Contact Door-eg</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body text-center p-4">
@@ -197,7 +138,6 @@
             <!-- WhatsApp Button -->
             <a href="https://wa.me/201507696360?text=Hello%20Icondoor,%20I%20would%20like%20to%20inquire%20about%20your%20products." 
                target="_blank" 
-               rel="noopener noreferrer"
                class="btn btn-success w-100 py-3 rounded-pill shadow-sm d-flex align-items-center justify-content-center gap-2">
                 <i class="fa fa-whatsapp"></i> 
                 <span>Chat on WhatsApp</span>
@@ -208,14 +148,15 @@
         </div>
       </div>
     </div>
-    
     <!-- ✅ JavaScript for Global Contact Modal -->
     <script>
       function openContactModal() {
+        // التأكد إن Bootstrap موجود قبل تشغيل المودال
         if (typeof bootstrap !== 'undefined') {
           var modal = new bootstrap.Modal(document.getElementById('globalContactModal'));
           modal.show();
         } else {
+          // Fallback: لو Bootstrap مش محمل، افتح الاتصال مباشرة
           window.location.href = 'tel:+201507696360';
         }
       }

@@ -1,158 +1,194 @@
 {% extends "base.html" %}
+{% load static %}
+
+<!-- ✅ 1. SEO Meta Tags for Contact Page -->
+{% block title %}Contact Icondoor | Get a Quote for Steel Doors & Pergolas in Giza{% endblock %}
+{% block meta_description %}Contact Icondoor for custom steel doors, pergolas, and metal ladders in Bulaq Al-Dakrur, Giza. Call 01507696360 or send us a message for a free quote.{% endblock %}
+{% block meta_keywords %}contact Icondoor, steel door quote giza, metal fabrication contact, pergola installation egypt, Icondoor phone number{% endblock %}
+
 {% block body %}
 
-{% load static %}
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <h1 class="display-1 text-white animated slideInDown">Contact Us</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb text-uppercase mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="{% url 'home:home' %}">Home</a></li>
-                    <li class="breadcrumb-item text-primary active" aria-current="page">Contact Us</li>
-                </ol>
-            </nav>
-        </div>
+<!-- ✅ 2. ContactPage Schema Markup (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "name": "Icondoor",
+    "telephone": "+201507696360",
+    "email": "sara.galal@rovanatrade.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Tawfiq Hamza Al-Adawi, Barak Al-Khayam",
+      "addressLocality": "Bulaq Al-Dakrur",
+      "addressRegion": "Giza",
+      "postalCode": "12941",
+      "addressCountry": "EG"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 30.049349,
+      "longitude": 31.164921
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Saturday", "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  }
+}
+</script>
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <!-- ✅ H1 Tag for Contact Page -->
+        <h1 class="display-1 text-white animated slideInDown">Contact Us</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb text-uppercase mb-0">
+                <li class="breadcrumb-item"><a class="text-white" href="{% url 'home:home' %}">Home</a></li>
+                <li class="breadcrumb-item text-primary active" aria-current="page">Contact Us</li>
+            </ol>
+        </nav>
     </div>
-    <!-- Page Header End -->
-
-
-    <!-- Contact Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-               <h4 class="section-title">Contact Our Team</h4>
-                <h1 class="display-5 mb-4">Need a Custom Steel Door or Shading Solution? We're Here to Help</h1>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex flex-column justify-content-between h-100">
-                        <div class="bg-light d-flex align-items-center w-100 p-4 mb-4">
-                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-dark" style="width: 55px; height: 55px;">
-                                <i class="fa fa-map-marker-alt text-primary"></i>
-                            </div>
-                           <div class="ms-4">
-    <p class="mb-2">Address</p>
-    <h5 class="mb-0 text-start" dir="rtl" style="font-family: 'Cairo', sans-serif; line-height: 1.6;">
-        توفيق حمزة العدوي، برك الخيام، بولاق<br>
-        الدكرور، محافظة الجيزة 12941
-    </h5>
-    <!-- زر صغير للاتجاهات -->
-    <a 
-        href="https://maps.app.goo.gl/yA1tR1rQht13LPsc9" 
-        target="_blank" 
-        class="text-primary text-decoration-none small mt-2 d-inline-block">
-
-
-
-<i class="fa fa-directions me-1"></i> Get Directions
-
-    </a>
 </div>
+<!-- Page Header End -->
+
+<!-- Contact Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+           <h4 class="section-title">Contact Our Team</h4>
+            <!-- ✅ H2 for Section Subtitle -->
+            <h2 class="display-5 mb-4">Need a Custom Steel Door or Shading Solution? We're Here to Help</h2>
+        </div>
+        <div class="row g-5">
+            
+            <!-- Contact Info Column -->
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="d-flex flex-column justify-content-between h-100">
+                    
+                    <!-- Address Box -->
+                    <div class="bg-light d-flex align-items-center w-100 p-4 mb-4 rounded shadow-sm">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-dark" style="width: 55px; height: 55px;">
+                            <i class="fa fa-map-marker-alt text-primary"></i>
                         </div>
-                        <div class="bg-light d-flex align-items-center w-100 p-4 mb-4">
-                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-dark" style="width: 55px; height: 55px;">
-                                <i class="fa fa-phone-alt text-primary"></i>
-                            </div>
-                            <div class="ms-4">
-    <p class="mb-2">Call Us Now</p>
-    <!-- جعلنا الرقم clickable وضيفنا له بيانات فتح المودال -->
-    <h3 class="mb-0 text-primary" style="cursor: pointer; transition: 0.3s;" 
-        data-bs-toggle="modal" 
-        data-bs-target="#contactChoiceModal"
-        onmouseover="this.style.opacity='0.8'" 
-        onmouseout="this.style.opacity='1'">
-        <i class="fa fa-phone-alt me-2"></i>0150 769 6360
-    </h3>
-    <small class="text-muted d-block mt-1" style="font-size: 0.8rem;">
-        Click to choose contact method
-    </small>
-</div>
-                        </div>
-                        <div class="bg-light d-flex align-items-center w-100 p-4">
-                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-dark" style="width: 55px; height: 55px;">
-                                <i class="fa fa-envelope-open text-primary"></i>
-                            </div>
-                           <div class="ms-4">
-    <p class="mb-2">Mail Us Now</p>
-    
-    <!-- الإيميل - قابل للنقر لفتح تطبيق البريد -->
-    <a href="mailto:sara.galal@rovanatrade.com" class="text-decoration-none text-dark d-block mb-2">
-        <h5 class="mb-0 fw-bold text-break">
-            <i class="fa fa-envelope-open text-primary me-2"></i>
-            sara.galal@rovanatrade.com
-        </h5>
-    </a>
-    
-    <!-- زر إرسال إيميل سريع -->
-    <a 
-        href="mailto:sara.galal@rovanatrade.com?subject=Inquiry%20about%20Icondoor%20Products&body=Hello%20Icondoor%20Team,%0A%0AI%20would%20like%20to%20inquire%20about..." 
-        class="btn btn-outline-primary btn-sm rounded-pill px-3 py-1 d-inline-flex align-items-center gap-2">
-        <i class="fa fa-paper-plane"></i>
-        <span class="small fw-medium">Send Quick Email</span>
-    </a>
-</div>
+                       <div class="ms-4">
+                            <p class="mb-2 fw-bold">Address</p>
+                            <h5 class="mb-2 text-start" dir="rtl" style="font-family: 'Cairo', sans-serif; line-height: 1.6;">
+                                توفيق حمزة العدوي، برك الخيام، بولاق<br>
+                                الدكرور، محافظة الجيزة 12941
+                            </h5>
+                            <a href="https://maps.app.goo.gl/yA1tR1rQht13LPsc9" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="text-primary text-decoration-none small fw-bold">
+                                <i class="fa fa-directions me-1"></i> Get Directions
+                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-<p class="mb-4 text-muted">
-    <i class="fa fa-clock-o text-primary me-2"></i>
-    We typically respond to all inquiries within 24 hours during business days. 
-    For urgent projects, please call us directly at 
-    <a href="tel:{{ site_info.phone }}" class="text-primary fw-bold">{{ site_info.phone }}</a>.
-</p>
 
+                    <!-- Phone Box -->
+                    <div class="bg-light d-flex align-items-center w-100 p-4 mb-4 rounded shadow-sm">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-dark" style="width: 55px; height: 55px;">
+                            <i class="fa fa-phone-alt text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2 fw-bold">Call Us Now</p>
+                            <!-- ✅ Using the Global Modal Function from base.html -->
+                            <h3 class="mb-0 text-primary" style="cursor: pointer; transition: 0.3s;" 
+                                onclick="openContactModal()"
+                                onmouseover="this.style.opacity='0.8'" 
+                                onmouseout="this.style.opacity='1'">
+                                <i class="fa fa-phone-alt me-2"></i>0150 769 6360
+                            </h3>
+                            <small class="text-muted d-block mt-1">Click to choose contact method</small>
+                        </div>
+                    </div>
 
-                  <form method="POST">
-    {% csrf_token %} <!-- ضروري جداً للأمان في Django -->
-    
-    
+                    <!-- Email Box -->
+                    <div class="bg-light d-flex align-items-center w-100 p-4 rounded shadow-sm">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-dark" style="width: 55px; height: 55px;">
+                            <i class="fa fa-envelope-open text-primary"></i>
+                        </div>
+                       <div class="ms-4">
+                            <p class="mb-2 fw-bold">Mail Us Now</p>
+                            
+                            <a href="mailto:sara.galal@rovanatrade.com" class="text-decoration-none text-dark d-block mb-2">
+                                <h5 class="mb-0 fw-bold text-break">
+                                    <i class="fa fa-envelope-open text-primary me-2"></i>
+                                    sara.galal@rovanatrade.com
+                                </h5>
+                            </a>
+                            
+                            <a href="mailto:sara.galal@rovanatrade.com?subject=Inquiry%20about%20Icondoor%20Products&body=Hello%20Icondoor%20Team,%0A%0AI%20would%20like%20to%20inquire%20about..." 
+                               class="btn btn-outline-primary btn-sm rounded-pill px-3 py-1 d-inline-flex align-items-center gap-2">
+                                <i class="fa fa-paper-plane"></i>
+                                <span class="small fw-medium">Send Quick Email</span>
+                            </a>
+                        </div>
+                    </div>
 
-    <div class="row g-3">
-        <div class="col-md-6">
-            <div class="form-floating">
-                <!-- أضفنا name="name" -->
-                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                <label for="name">Your Name</label>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-floating">
-                <!-- أضفنا name="email" -->
-                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                <label for="email">Your Email</label>
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-floating">
-                <!-- أضفنا name="subject" -->
-                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
-                <label for="subject">Subject</label>
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-floating">
-                <!-- أضفنا name="message" -->
-                <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 100px" required></textarea>
-                <label for="message">Message</label>
-            </div>
-        </div>
-        <div class="col-12">
-            <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-        </div>
-    </div>
-</form>
                 </div>
             </div>
+
+            <!-- Contact Form Column -->
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <p class="mb-4 text-muted">
+                    <i class="fa fa-clock-o text-primary me-2"></i>
+                    We typically respond to all inquiries within 24 hours during business days. 
+                    For urgent projects, please call us directly.
+                </p>
+
+                <form method="POST" action="" novalidate>
+                    {% csrf_token %}
+                    
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required autocomplete="name">
+                                <label for="name">Your Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required autocomplete="email">
+                                <label for="email">Your Email</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" autocomplete="off">
+                                <label for="subject">Subject</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 150px" required></textarea>
+                                <label for="message">Message</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3 fw-bold" type="submit">
+                                <i class="fa fa-paper-plane me-2"></i> Send Message
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-    <!-- Contact End -->
-
+</div>
+<!-- Contact End -->
 
 <!-- Google Map Start -->
 <div class="container-xxl pt-5 px-0 wow fadeIn" data-wow-delay="0.1s">
     <div class="map-responsive">
+        <!-- ✅ Optimized Iframe with Title and Lazy Loading -->
         <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.5645027300243!2d31.164921399999997!3d30.049349499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14586bcadcb1b82f%3A0xc9ca737d594ef71e!2sRovana%20Trade!5e0!3m2!1sar!2seg!4v1773374632299!5m2!1sar!2seg" 
             class="w-100" 
@@ -160,44 +196,13 @@
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
-            title="Door-eg - Rovana Trade Location">
+            title="Icondoor Location on Google Maps - Bulaq Al-Dakrur">
         </iframe>
     </div>
 </div>
 <!-- Google Map End -->
 
-
-<!-- ✅ Contact Choice Modal Start -->
-<div class="modal fade" id="contactChoiceModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-0 shadow-lg">
-      <div class="modal-header border-0">
-        <h5 class="modal-title fw-bold">Contact Door-eg</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center p-4">
-        <p class="text-muted mb-4">Choose your preferred way to reach us</p>
-        
-        <!-- Phone Call Button -->
-        <a href="tel:+201507696360" class="btn btn-primary w-100 py-3 mb-3 rounded-pill shadow-sm">
-            <i class="fa fa-phone-alt me-2"></i> Phone Call
-        </a>
-        
-        <!-- WhatsApp Button -->
-        <a href="https://wa.me/201507696360?text=Hello%20Icondoor,%20I%20would%20like%20to%20inquire%20about%20your%20products." target="_blank" class="btn btn-success w-100 py-3 rounded-pill shadow-sm">
-            <i class="fa fa-whatsapp me-2"></i> Chat on WhatsApp
-        </a>
-        
-        <p class="small text-muted mt-3 mb-0">We're here to help with your steel doors & shading solutions</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ✅ Contact Choice Modal End -->
-<!-- ✅ Modal Choice End -->
-
-    <!-- ✅ Success Modal -->
+<!-- ✅ Success Modal (Kept here as it's specific to Form Submission) -->
 <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0 shadow-lg">
@@ -218,24 +223,22 @@
   </div>
 </div>
 
-<!-- ✅ JavaScript لتشغيل المودال أوتوماتيك -->
+<!-- ✅ JavaScript for Success Modal -->
+<!-- ✅ JavaScript for Success Modal using Django Messages -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    {% if show_success_modal %}
-      var successModal = new bootstrap.Modal(document.getElementById('successModal'));
-      successModal.show();
-      
-      // Optional: إعادة تعيين الفورم عشان مايتملأش تاني
-      document.querySelector('form').reset();
-    {% endif %}
-    
-    {% if error %}
-      // لو فيه خطأ، ممكن نعمل alert بسيط أو نعرضه في مودال تاني
-      alert("{{ error }}");
+    // Check if there is a success message from Django
+    {% if messages %}
+      {% for message in messages %}
+        {% if message.tags == 'success' %}
+          var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+          successModal.show();
+        {% elif message.tags == 'error' %}
+          alert("{{ message }}");
+        {% endif %}
+      {% endfor %}
     {% endif %}
   });
 </script>
-
-
 
 {% endblock body %}

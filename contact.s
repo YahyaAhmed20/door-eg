@@ -1,0 +1,241 @@
+{% extends "base.html" %}
+{% block body %}
+
+{% load static %}
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <h1 class="display-1 text-white animated slideInDown">Contact Us</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb text-uppercase mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="{% url 'home:home' %}">Home</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Contact Us</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+               <h4 class="section-title">Contact Our Team</h4>
+                <h1 class="display-5 mb-4">Need a Custom Steel Door or Shading Solution? We're Here to Help</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex flex-column justify-content-between h-100">
+                        <div class="bg-light d-flex align-items-center w-100 p-4 mb-4">
+                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-dark" style="width: 55px; height: 55px;">
+                                <i class="fa fa-map-marker-alt text-primary"></i>
+                            </div>
+                           <div class="ms-4">
+    <p class="mb-2">Address</p>
+    <h5 class="mb-0 text-start" dir="rtl" style="font-family: 'Cairo', sans-serif; line-height: 1.6;">
+        توفيق حمزة العدوي، برك الخيام، بولاق<br>
+        الدكرور، محافظة الجيزة 12941
+    </h5>
+    <!-- زر صغير للاتجاهات -->
+    <a 
+        href="https://maps.app.goo.gl/yA1tR1rQht13LPsc9" 
+        target="_blank" 
+        class="text-primary text-decoration-none small mt-2 d-inline-block">
+
+
+
+<i class="fa fa-directions me-1"></i> Get Directions
+
+    </a>
+</div>
+                        </div>
+                        <div class="bg-light d-flex align-items-center w-100 p-4 mb-4">
+                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-dark" style="width: 55px; height: 55px;">
+                                <i class="fa fa-phone-alt text-primary"></i>
+                            </div>
+                            <div class="ms-4">
+    <p class="mb-2">Call Us Now</p>
+    <!-- جعلنا الرقم clickable وضيفنا له بيانات فتح المودال -->
+    <h3 class="mb-0 text-primary" style="cursor: pointer; transition: 0.3s;" 
+        data-bs-toggle="modal" 
+        data-bs-target="#contactChoiceModal"
+        onmouseover="this.style.opacity='0.8'" 
+        onmouseout="this.style.opacity='1'">
+        <i class="fa fa-phone-alt me-2"></i>0150 769 6360
+    </h3>
+    <small class="text-muted d-block mt-1" style="font-size: 0.8rem;">
+        Click to choose contact method
+    </small>
+</div>
+                        </div>
+                        <div class="bg-light d-flex align-items-center w-100 p-4">
+                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-dark" style="width: 55px; height: 55px;">
+                                <i class="fa fa-envelope-open text-primary"></i>
+                            </div>
+                           <div class="ms-4">
+    <p class="mb-2">Mail Us Now</p>
+    
+    <!-- الإيميل - قابل للنقر لفتح تطبيق البريد -->
+    <a href="mailto:sara.galal@rovanatrade.com" class="text-decoration-none text-dark d-block mb-2">
+        <h5 class="mb-0 fw-bold text-break">
+            <i class="fa fa-envelope-open text-primary me-2"></i>
+            sara.galal@rovanatrade.com
+        </h5>
+    </a>
+    
+    <!-- زر إرسال إيميل سريع -->
+    <a 
+        href="mailto:sara.galal@rovanatrade.com?subject=Inquiry%20about%20Icondoor%20Products&body=Hello%20Icondoor%20Team,%0A%0AI%20would%20like%20to%20inquire%20about..." 
+        class="btn btn-outline-primary btn-sm rounded-pill px-3 py-1 d-inline-flex align-items-center gap-2">
+        <i class="fa fa-paper-plane"></i>
+        <span class="small fw-medium">Send Quick Email</span>
+    </a>
+</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+<p class="mb-4 text-muted">
+    <i class="fa fa-clock-o text-primary me-2"></i>
+    We typically respond to all inquiries within 24 hours during business days. 
+    For urgent projects, please call us directly at 
+    <a href="tel:{{ site_info.phone }}" class="text-primary fw-bold">{{ site_info.phone }}</a>.
+</p>
+
+
+                  <form method="POST">
+    {% csrf_token %} <!-- ضروري جداً للأمان في Django -->
+    
+    
+
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="form-floating">
+                <!-- أضفنا name="name" -->
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                <label for="name">Your Name</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <!-- أضفنا name="email" -->
+                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                <label for="email">Your Email</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-floating">
+                <!-- أضفنا name="subject" -->
+                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
+                <label for="subject">Subject</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-floating">
+                <!-- أضفنا name="message" -->
+                <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 100px" required></textarea>
+                <label for="message">Message</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+        </div>
+    </div>
+</form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+<!-- Google Map Start -->
+<div class="container-xxl pt-5 px-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="map-responsive">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.5645027300243!2d31.164921399999997!3d30.049349499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14586bcadcb1b82f%3A0xc9ca737d594ef71e!2sRovana%20Trade!5e0!3m2!1sar!2seg!4v1773374632299!5m2!1sar!2seg" 
+            class="w-100" 
+            style="height: 450px; border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Door-eg - Rovana Trade Location">
+        </iframe>
+    </div>
+</div>
+<!-- Google Map End -->
+
+
+<!-- ✅ Contact Choice Modal Start -->
+<div class="modal fade" id="contactChoiceModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold">Contact Door-eg</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center p-4">
+        <p class="text-muted mb-4">Choose your preferred way to reach us</p>
+        
+        <!-- Phone Call Button -->
+        <a href="tel:+201507696360" class="btn btn-primary w-100 py-3 mb-3 rounded-pill shadow-sm">
+            <i class="fa fa-phone-alt me-2"></i> Phone Call
+        </a>
+        
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/201507696360?text=Hello%20Icondoor,%20I%20would%20like%20to%20inquire%20about%20your%20products." target="_blank" class="btn btn-success w-100 py-3 rounded-pill shadow-sm">
+            <i class="fa fa-whatsapp me-2"></i> Chat on WhatsApp
+        </a>
+        
+        <p class="small text-muted mt-3 mb-0">We're here to help with your steel doors & shading solutions</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ Contact Choice Modal End -->
+<!-- ✅ Modal Choice End -->
+
+    <!-- ✅ Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header border-0 pb-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center pt-0 pb-4">
+        <div class="mb-4">
+          <i class="fa fa-check-circle text-success" style="font-size: 4rem;"></i>
+        </div>
+        <h4 class="modal-title mb-3">Thank You! 🎉</h4>
+        <p class="text-muted mb-0">Our team will contact you soon.</p>
+      </div>
+      <div class="modal-footer border-0 justify-content-center pb-4">
+        <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">Got it!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ JavaScript لتشغيل المودال أوتوماتيك -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    {% if show_success_modal %}
+      var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+      successModal.show();
+      
+      // Optional: إعادة تعيين الفورم عشان مايتملأش تاني
+      document.querySelector('form').reset();
+    {% endif %}
+    
+    {% if error %}
+      // لو فيه خطأ، ممكن نعمل alert بسيط أو نعرضه في مودال تاني
+      alert("{{ error }}");
+    {% endif %}
+  });
+</script>
+
+
+
+{% endblock body %}

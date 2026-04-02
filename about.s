@@ -1,64 +1,37 @@
 {% extends 'base.html' %}
-{% load static %}
-
-<!-- ✅ 1. SEO Meta Tags for About Page -->
-{% block title %}About Icondoor | 9+ Years of Steel Fabrication Excellence in Giza{% endblock %}
-{% block meta_description %}Learn about Icondoor, a leading steel fabrication company in Bulaq Al-Dakrur, Giza. We specialize in metal doors, pergolas, and ladders with over 9 years of experience. Meet our team.{% endblock %}
-{% block meta_keywords %}about Icondoor, steel fabrication company egypt, metal doors manufacturer giza, Icondoor team, Bulaq Al-Dakrour workshops{% endblock %}
-
 {% block body %}
-
-<!-- ✅ 2. Breadcrumb Schema Markup (JSON-LD) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "name": "Home",
-    "item": "{{ request.scheme }}://{{ request.get_host }}{% url 'home:home' %}"
-  },{
-    "@type": "ListItem",
-    "position": 2,
-    "name": "About Us",
-    "item": "{{ request.build_absolute_uri }}"
-  }]
-}
-</script>
-
-<!-- Page Header Start -->
-<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <!-- ✅ H1 Tag for About Page (Important for SEO) -->
-        <h1 class="display-1 text-white animated slideInDown">About Us</h1>
-        <nav aria-label="breadcrumb animated slideInDown">
-            <ol class="breadcrumb text-uppercase mb-0">
-                <li class="breadcrumb-item"><a class="text-white" href="{% url 'home:home' %}">Home</a></li>
-                <li class="breadcrumb-item text-primary active" aria-current="page">About</li>
-            </ol>
-        </nav>
+{% load static %}
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <h1 class="display-1 text-white animated slideInDown">About Us</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb text-uppercase mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="{% url 'home:home' %}">Home</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">About</li>
+                </ol>
+            </nav>
+        </div>
     </div>
-</div>
-<!-- Page Header End -->
+    <!-- Page Header End -->
 
-<!-- About Start -->
+
+   <!-- About Start -->
 <div class="container-xxl py-5">
     <div class="container">
         <div class="row g-5">
             
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                 <div class="about-img">
-                    <!-- ✅ Alt Text & Lazy Loading -->
-                    <img class="img-fluid mb-3" 
+
+                    <img class="img-fluid" 
                          src="{{ about.image1.url }}" 
-                         alt="Icondoor Workshop - Steel Fabrication Process" 
-                         loading="lazy">
+                         alt="">
 
                     <img class="img-fluid" 
                          src="{{ about.image2.url }}" 
-                         alt="Icondoor Finished Metal Door Project" 
-                         loading="lazy">
+                         alt="">
+
                 </div>
             </div>
 
@@ -66,10 +39,9 @@
 
                 <h4 class="section-title">{{ about.section_title }}</h4>
 
-                <!-- ✅ H2 for Main Content Title -->
-                <h2 class="display-5 mb-4">
+                <h1 class="display-5 mb-4">
                     {{ about.title }}
-                </h2>
+                </h1>
 
                 <p>
                     {{ about.description1 }}
@@ -98,14 +70,11 @@
 
                 </div>
 
-                <!-- ✅ Improved CTA Button -->
-                <a class="btn btn-primary py-3 px-5" 
-                   href="https://www.facebook.com/laserDoor" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   aria-label="Visit Icondoor Facebook Page">
-                   <i class="fab fa-facebook-f me-2"></i> Visit Facebook
-                </a>
+              <a class="btn btn-primary py-3 px-5" 
+   href="https://www.facebook.com/laserDoor" 
+   target="_blank">
+   <i class="fab fa-facebook-f me-2"></i> Visit Facebook
+</a>
 
             </div>
 
@@ -114,7 +83,8 @@
 </div>
 <!-- About End -->
 
-<!-- Feature Start -->
+
+  <!-- Feature Start -->
 <div class="container-xxl py-5">
     <div class="container">
         <div class="row g-5">
@@ -125,10 +95,9 @@
                     {{ feature_section.section_title }}
                 </h4>
 
-                <!-- ✅ H2 for Section Title -->
-                <h2 class="display-5 mb-4">
+                <h1 class="display-5 mb-4">
                     {{ feature_section.title }}
-                </h2>
+                </h1>
 
                 <p class="mb-4">
                     {{ feature_section.description }}
@@ -137,23 +106,27 @@
                 <div class="row g-4">
 
                     {% for feature in feature_section.features.all %}
+
                     <div class="col-12">
                         <div class="d-flex align-items-start">
-                            <!-- ✅ Alt Text for Feature Icons -->
+
                             <img class="flex-shrink-0"
                                  src="{{ feature.icon.url }}"
-                                 alt="{{ feature.title }} Icon"
-                                 loading="lazy">
+                                 alt="Icon">
 
                             <div class="ms-4">
-                                <!-- ✅ H3 for Feature Title -->
+
                                 <h3>{{ feature.title }}</h3>
+
                                 <p class="mb-0">
                                     {{ feature.description }}
                                 </p>
+
                             </div>
+
                         </div>
                     </div>
+
                     {% endfor %}
 
                 </div>
@@ -161,17 +134,19 @@
             </div>
 
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+
                 <div class="feature-img">
-                    <img class="img-fluid mb-3"
+
+                    <img class="img-fluid"
                          src="{{ feature_section.image1.url }}"
-                         alt="Icondoor Precision Engineering Feature"
-                         loading="lazy">
+                         alt="">
 
                     <img class="img-fluid"
                          src="{{ feature_section.image2.url }}"
-                         alt="Icondoor Professional Installation Team"
-                         loading="lazy">
+                         alt="">
+
                 </div>
+
             </div>
 
         </div>
@@ -179,6 +154,7 @@
 </div>
 <!-- Feature End -->
 
+   
 <!-- Team Start -->
 <div class="container-xxl py-5">
     <div class="container">
@@ -191,32 +167,32 @@
                 {{ team_section.section_title }}
             </h4>
 
-            <!-- ✅ H2 for Team Section -->
-            <h2 class="display-5 mb-4">
+            <h1 class="display-5 mb-4">
                 {{ team_section.title }}
-            </h2>
+            </h1>
 
         </div>
 
         <div class="row g-0 team-items">
 
             {% for member in team_section.members.all %}
+
             <div class="col-lg-3 col-md-6 wow fadeInUp">
+
                 <div class="team-item position-relative">
+
                     <div class="position-relative">
-                        <!-- ✅ Alt Text for Team Members -->
+
                         <img class="img-fluid"
                              src="{{ member.image.url }}"
-                             alt="{{ member.name }} - {{ member.position }}"
-                             loading="lazy">
+                             alt="{{ member.name }}">
 
                         <div class="team-social text-center">
+
                             {% if member.facebook %}
                             <a class="btn btn-square"
                                href="{{ member.facebook }}"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               aria-label="{{ member.name }} Facebook Profile">
+                               target="_blank">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                             {% endif %}
@@ -224,26 +200,31 @@
                             {% if member.linkedin %}
                             <a class="btn btn-square"
                                href="{{ member.linkedin }}"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               aria-label="{{ member.name }} LinkedIn Profile">
+                               target="_blank">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                             {% endif %}
+
                         </div>
+
                     </div>
 
                     <div class="bg-light text-center p-4">
-                        <!-- ✅ H3 for Member Name -->
+
                         <h3 class="mt-2">
                             {{ member.name }}
                         </h3>
+
                         <span class="text-primary">
                             {{ member.position }}
                         </span>
+
                     </div>
+
                 </div>
+
             </div>
+
             {% endfor %}
 
         </div>
